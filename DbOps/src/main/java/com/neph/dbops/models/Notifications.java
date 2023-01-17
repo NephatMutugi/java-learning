@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @ToString
 @Entity
 @Table(name = "BPR_C2B_NOTIFICATIONS")
-public class BprC2bNotification {
+public class Notifications {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
