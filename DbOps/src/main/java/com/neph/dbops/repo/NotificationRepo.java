@@ -12,4 +12,5 @@ public interface NotificationRepo extends JpaRepository<Notifications, Long> {
 
     @Override
     List<Notifications> findAll();
+    List<Notifications> findAllByNotificationTypeAndStatusMessage(String notificationType, String statusMessage);
 }

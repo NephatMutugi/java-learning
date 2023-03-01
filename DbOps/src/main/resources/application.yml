@@ -1,0 +1,19 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto:queue: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle10gDialect
+  datasource:
+    url: '${JDBC_URL:jdbc:oracle:thin:@//10.219.101.30:1535/CHANUAT2}'
+    username: '${DATABASE_USERNAME:ocpdr}'
+    password: '${DATABASE_PASSWORD:gateway}'
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+  config:
+    activate:
+      on-profile:
+
+server:
+  port: 9090

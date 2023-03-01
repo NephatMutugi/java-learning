@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serializable;
+import java.sql.Blob;
 import java.time.LocalDate;
 
 @Getter
@@ -12,17 +14,23 @@ import java.time.LocalDate;
 @ToString
 @Entity
 @Table(name = "BPR_C2B_NOTIFICATIONS")
-public class Notifications {
+public class Notifications implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
     private Long id;
 
     @Column(name = "REQUEST")
-    private byte[] request;
+    @Lob
+    private Blob request;
 
     @Column(name = "RESPONSE")
-    private byte[] response;
+    @Lob
+    private Blob response;
+
+    @Column(name = "RECORD_ERRORS")
+    @Lob
+    private Blob recordErrors;
 
     @Column(name = "CREATEDAT")
     private LocalDate createdAt;
